@@ -22,10 +22,13 @@ public class Converter {
         new Base(1,"I"),
     };
     public static String convert(int number){
+        if (number == 0)
+            return "";
         for (int i=0;i<bases.length;i++) {
             int d = number/bases[i].value;
+            int remainder = number % bases[i].value;
             if(d >= 1 && d!=4){
-                return bases[i].representation.repeat(d);
+                return bases[i].representation.repeat(d)+convert(remainder);
             } else if(d==4){
                 return bases[i].representation+bases[i-1].representation;
             }
