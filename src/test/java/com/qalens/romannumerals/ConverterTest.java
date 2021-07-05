@@ -53,7 +53,9 @@ public class ConverterTest {
     }
     @ParameterizedTest
     @CsvSource({
-            "9,IX"
+            "9,IX",
+            "90,XC",
+            "900,CM",
     })
     public void shouldConvertSimpleNumbersThatAreJustPriorTo10PowerBase(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
