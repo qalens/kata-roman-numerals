@@ -40,7 +40,13 @@ public class ConverterTest {
     }
     @ParameterizedTest
     @CsvSource({
-            "6,VI"
+            "6,VI",
+            "11,XI",
+            "60,LX",
+            "110,CX",
+            "600,DC",
+            "1100,MC",
+            "1666,MDCLXVI",
     })
     public void shouldConvertSimpleNumbersThatAreJustAfterToBase(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
