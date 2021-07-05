@@ -27,7 +27,8 @@ public class Converter {
         for (int i=0;i<bases.length;i++) {
             int pow10d = number*10/bases[i].value;
             if(pow10d == 9){
-                return bases[i+2].representation + bases[i].representation;
+                int power10remainder = number + bases[i+2].value - bases[i].value;
+                return bases[i+2].representation + bases[i].representation + convert(power10remainder);
             }
             int d = number/bases[i].value;
             int remainder = number % bases[i].value;
