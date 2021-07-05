@@ -10,7 +10,8 @@ public class ConverterTest {
     @CsvSource({
             "1,I",
             "3,III",
-            "5,V"
+            "5,V",
+            "10,X"
     })
     public void shouldConvertSimpleNumbersThatAreNotJustPriorToBase(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
