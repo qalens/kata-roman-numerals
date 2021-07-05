@@ -73,7 +73,7 @@ public class ConverterTest {
     @CsvSource({
             "888,DCCCLXXXVIII"
     })
-    public void exploratory(int number, String expected){
+    public void shouldHandleDigit8(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
     }
     @ParameterizedTest
