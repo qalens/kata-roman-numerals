@@ -51,4 +51,11 @@ public class ConverterTest {
     public void shouldConvertSimpleNumbersThatAreJustAfterToBase(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
     }
+    @ParameterizedTest
+    @CsvSource({
+            "9,IX"
+    })
+    public void shouldConvertSimpleNumbersThatAreJustPriorTo10PowerBase(int number, String expected){
+        Assertions.assertEquals(expected,Converter.convert(number));
+    }
 }
