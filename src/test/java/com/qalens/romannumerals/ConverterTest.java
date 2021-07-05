@@ -9,7 +9,6 @@ public class ConverterTest {
     @ParameterizedTest
     @CsvSource({
             "1,I",
-            "3,III",
             "5,V",
             "10,X",
             "50,L",
@@ -18,6 +17,16 @@ public class ConverterTest {
             "1000,M"
     })
     public void shouldConvertSimpleNumbersThatAreNotJustPriorToBase(int number, String expected){
+        Assertions.assertEquals(expected,Converter.convert(number));
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "3,III",
+            "30,XXX",
+            "300,CCC",
+            "3000,MMM"
+    })
+    public void shouldConvertSimpleNumbersThatAreNotJustPriorToBaseForMultiples(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
     }
 }
