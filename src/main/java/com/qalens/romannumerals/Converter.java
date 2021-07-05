@@ -22,10 +22,12 @@ public class Converter {
         new Base(1,"I"),
     };
     public static String convert(int number){
-        for (Base base:bases
-             ) {
-            if(number/base.value >= 1){
-                return base.representation.repeat(number/base.value);
+        for (int i=0;i<bases.length;i++) {
+            int d = number/bases[i].value;
+            if(d >= 1 && d!=4){
+                return bases[i].representation.repeat(d);
+            } else if(d==4){
+                return bases[i].representation+bases[i-1].representation;
             }
         }
         throw new UnsupportedOperationException("Not yet Implemented");
