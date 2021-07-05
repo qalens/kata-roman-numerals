@@ -13,9 +13,13 @@ public class Converter {
         }
     }
     public static Base[] bases= {
+        new Base(1000,"M"),
+        new Base(500,"D"),
+        new Base(100,"C"),
+        new Base(50,"L"),
         new Base(10,"X"),
-            new Base(5,"V"),
-            new Base(1,"I"),
+        new Base(5,"V"),
+        new Base(1,"I"),
     };
     public static String convert(int number){
         for (Base base:bases
