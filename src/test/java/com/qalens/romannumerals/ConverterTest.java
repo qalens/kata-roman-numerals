@@ -65,6 +65,7 @@ public class ConverterTest {
             "91,XCI",
             "94,XCIV",
             "99,XCIX",
+            "991,CMXCI"
     })
     public void shouldSupportMoreNumbersThatAreJusPriorTo10PowerBaseAndNotPerfectMultiple(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
