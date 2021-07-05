@@ -35,7 +35,14 @@ public class ConverterTest {
             "40,XL",
             "400,CD",
     })
-    public void shouldConvertSimpleNumbersThatAreNotJustPriorToBaseFor4(int number, String expected){
+    public void shouldConvertSimpleNumbersThatAreJustPriorToBaseFor4(int number, String expected){
+        Assertions.assertEquals(expected,Converter.convert(number));
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "6,VI"
+    })
+    public void shouldConvertSimpleNumbersThatAreJustAfterToBase(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
     }
 }
