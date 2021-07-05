@@ -31,7 +31,9 @@ public class ConverterTest {
     }
     @ParameterizedTest
     @CsvSource({
-            "4,IV"
+            "4,IV",
+            "40,XL",
+            "400,CD",
     })
     public void shouldConvertSimpleNumbersThatAreNotJustPriorToBaseFor4(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
