@@ -31,8 +31,8 @@ public class Converter {
                 return bases[i+2].representation + bases[i].representation + convert(power10remainder);
             }
             int d = number/bases[i].value;
-            int remainder = number % bases[i].value;
             if(d >= 1 && d!=4){
+                int remainder = number % bases[i].value;
                 return bases[i].representation.repeat(d)+convert(remainder);
             } else if(d==4){
                 return bases[i].representation+bases[i-1].representation;
