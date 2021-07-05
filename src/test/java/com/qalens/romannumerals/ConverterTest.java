@@ -70,4 +70,11 @@ public class ConverterTest {
     public void shouldSupportMoreNumbersThatAreJusPriorTo10PowerBaseAndNotPerfectMultiple(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
     }
+    @ParameterizedTest
+    @CsvSource({
+            "888,DCCCLXXXVIII"
+    })
+    public void exploratory(int number, String expected){
+        Assertions.assertEquals(expected,Converter.convert(number));
+    }
 }
