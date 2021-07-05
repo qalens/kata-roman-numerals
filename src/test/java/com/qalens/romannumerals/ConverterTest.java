@@ -8,7 +8,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class ConverterTest {
     @ParameterizedTest
     @CsvSource({
-            "1,I"
+            "1,I",
+            "3,III",
+            "5,V"
     })
     public void shouldConvertSimpleNumbersThatAreNotJustPriorToBase(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
