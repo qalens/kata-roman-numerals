@@ -60,4 +60,13 @@ public class ConverterTest {
     public void shouldConvertSimpleNumbersThatAreJustPriorTo10PowerBase(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
     }
+    @ParameterizedTest
+    @CsvSource({
+            "91,XCI",
+            "94,XCIV",
+            "99,XCIX",
+    })
+    public void shouldSupportMoreNumbersThatAreJusPriorTo10PowerBaseAndNotPerfectMultiple(int number, String expected){
+        Assertions.assertEquals(expected,Converter.convert(number));
+    }
 }
