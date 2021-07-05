@@ -79,6 +79,8 @@ public class ConverterTest {
     @ParameterizedTest
     @CsvSource({
             "41,XLI",
+            "44,XLIV",
+            "444,CDXLIV",
     })
     public void shouldConvertSimpleNumbersThatAreJustPriorToBase5WithNoPerfectDivision(int number, String expected){
         Assertions.assertEquals(expected,Converter.convert(number));
